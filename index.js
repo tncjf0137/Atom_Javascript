@@ -1,8 +1,19 @@
-const age = prompt("How old are you");
+const title=document.querySelector("#title");
 
-if(age>18){
-console.log("you can drink");
+const BASE_COLOR="#8e44ad";
+const OTHER_COLOR="#2980b9";
 
-}else{
-  console.log("you cant");
+function handleClick(){
+  const currentColor=title.style.color;
+  if(currentColor===BASE_COLOR){
+    title.style.color=OTHER_COLOR;
+  }else{title.style.color=BASE_COLOR;
 }
+}
+function init(){
+title.style.color= BASE_COLOR;
+title.addEventListener("click",handleClick);
+
+
+}
+init();
