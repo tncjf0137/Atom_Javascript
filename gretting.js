@@ -1,19 +1,21 @@
 const form=document.querySelector(".js-form"),
-input=document.querySelector("input")
+input=form.querySelector("input")
+greeting=document.querySelector(".js-greetings");
+ const user="currentUser",showing="showing";
 
- const user="currentUser"
-
+function paintGreeting(text){
+  form.classList.remove(showing);
+  greeting.classList.add(showing);
+greeting.innerText=`Hello '${text}'`
+}
  function loadName(){
-const currentUser=loadStorage.getItem(user);
+const currentUser=localStorage.getItem(user);
 if(currentUser===null){
 
 }else{
-
+paintGreeting(currentUser);
 
 }
-
-
-
 
  }
  function init(){
